@@ -603,7 +603,7 @@ public class CollectionKit {
 		for (T t : array) {
 			if(t == value) {
 				return true;
-			}else if(false == isPrimitive && null != value && value.equals(t)) {
+			}else if(!isPrimitive && null != value && value.equals(t)) {
 				return true;
 			}
 		}

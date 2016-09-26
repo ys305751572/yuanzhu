@@ -5,7 +5,6 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
 import com.smallchill.core.exception.ToolBoxException;
-import com.smallchill.core.toolbox.kit.StrKit;
 
 /**
  * 字符集工具类
@@ -16,8 +15,7 @@ public class CharsetKit {
 	
 	public static final String ISO_8859_1 = "ISO-8859-1";
 	public static final String UTF_8 = "UTF-8";
-	public static final String GBK = "GBK";
-	
+
 	private CharsetKit() {
 		// 静态类不可实例化
 	}

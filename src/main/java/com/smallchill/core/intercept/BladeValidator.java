@@ -123,7 +123,7 @@ public abstract class BladeValidator extends BladeInterceptor {
 			addError(errorMessage);
 		}
 		String val = request.getParameter(field);
-		if (val.indexOf("<") >= 0) {
+		if (val.contains("<")) {
 			addError(errorMessage);
 		}
 	}

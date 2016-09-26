@@ -150,7 +150,7 @@ public class FileKit {
 			return null;
 		}
 		path = getAbsolutePath(path);
-		if(path.endsWith(String.valueOf(UNIX_SEPARATOR)) == false) {
+		if(!path.endsWith(String.valueOf(UNIX_SEPARATOR))) {
 			path = path + UNIX_SEPARATOR;
 		}
 		
@@ -174,7 +174,7 @@ public class FileKit {
 					final String name = entry.getName();
 					if(name.startsWith(subPath)) {
 						String nameSuffix = StrKit.removePrefix(name, subPath);
-						if(nameSuffix.contains(String.valueOf(UNIX_SEPARATOR)) == false) {
+						if(!nameSuffix.contains(String.valueOf(UNIX_SEPARATOR))) {
 							paths.add(nameSuffix);
 						}
 					}
@@ -261,7 +261,7 @@ public class FileKit {
 		}
 		
 		file.getParentFile().mkdirs();
-		if(false == file.exists()) {
+		if(!file.exists()) {
 			file.createNewFile();
 		}
 		return file;
@@ -284,7 +284,7 @@ public class FileKit {
 	 * @throws IOException
 	 */
 	public static boolean del(File file) throws IOException {
-		if(file == null || file.exists() == false) {
+		if(file == null || !file.exists()) {
 			return true;
 		}
 		
@@ -292,7 +292,7 @@ public class FileKit {
 			File[] files = file.listFiles();
 			for (File childFile : files) {
 				boolean isOk = del(childFile);
-				if(isOk == false) {
+				if(!isOk) {
 					//删除一个出错则本次删除任务失败
 					return false;
 				}
@@ -311,7 +311,7 @@ public class FileKit {
 			return null;
 		}
 		File dir = file(dirPath);
-		if(false == dir.exists()) {
+		if(!dir.exists()) {
 			dir.mkdirs();
 		}
 		return dir;

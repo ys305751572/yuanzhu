@@ -216,7 +216,7 @@ public class BeanKit {
 			for (PropertyDescriptor property : propertyDescriptors) {
 				String key = property.getName();
 				// 过滤class属性
-				if (false == key.equals("class")) {
+				if (!key.equals("class")) {
 					// 得到property对应的getter方法
 					Method getter = property.getReadMethod();
 					Object value = getter.invoke(bean);
@@ -282,12 +282,12 @@ public class BeanKit {
 	 * @author Looly
 	 *
 	 */
-	public static interface ValueProvider{
+	public interface ValueProvider{
 		/**
 		 * 获取值
 		 * @param name Bean对象中参数名
 		 * @return 对应参数名的值
 		 */
-		public Object value(String name);
+		Object value(String name);
 	}
 }
