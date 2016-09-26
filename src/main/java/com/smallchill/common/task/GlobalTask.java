@@ -6,7 +6,7 @@ public class GlobalTask implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub11
 		System.out.println("任务调度执行:" + DateKit.getTime());
 	}
 
