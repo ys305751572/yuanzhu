@@ -38,7 +38,7 @@ public class ReportController extends BaseController {
     @RequestMapping(KEY_ADD)
     public String add(ModelMap mm) {
         mm.put("code", CODE);
-        return BASE_PATH + "report_view.html";
+        return BASE_PATH + "report_add.html";
     }
 
     @RequestMapping(KEY_EDIT + "/{id}")
@@ -47,7 +47,7 @@ public class ReportController extends BaseController {
         mm.put("model", JsonKit.toJson(report));
         mm.put("id", id);
         mm.put("code", CODE);
-        return BASE_PATH + "report_view.html";
+        return BASE_PATH + "report_edit.html";
     }
 
     @RequestMapping(KEY_VIEW + "/{id}")

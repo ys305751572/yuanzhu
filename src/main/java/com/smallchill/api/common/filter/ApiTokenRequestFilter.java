@@ -15,11 +15,11 @@ import org.apache.commons.lang3.StringUtils;
  * API请求参数过滤器
  * Created by yesong on 2015/8/10.
  */
-public class ApiRequestFilter implements Filter,ConstApi {
+public class ApiTokenRequestFilter implements Filter,ConstApi {
 
     private static String[] SKIP_URLS = new String[]{};
 
-    public ApiRequestFilter() {
+    public ApiTokenRequestFilter() {
     }
 
     @Override

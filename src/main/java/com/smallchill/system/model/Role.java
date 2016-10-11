@@ -22,6 +22,8 @@ import org.beetl.sql.core.annotatoin.Table;
 import com.smallchill.core.annotation.BindID;
 import com.smallchill.core.base.model.BaseModel;
 
+import javax.persistence.Column;
+
 @Table(name = "tfw_role")
 @BindID(name = "id")
 @SuppressWarnings("serial")

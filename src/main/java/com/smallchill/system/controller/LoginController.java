@@ -88,20 +88,20 @@ public class LoginController extends BaseController implements Const{
 			LogKit.println("sessionHost	: {}", session.getHost());
 			LogKit.println("sessionTimeOut	: {}", session.getTimeout());
 		} catch (UnknownAccountException e) {
-			log.error("账号不存在：{}", e);
-			return error("账号不存在");
-		} catch (DisabledAccountException e) {
-			log.error("账号未启用：{}", e);
-			return error("账号未启用");
-		} catch (IncorrectCredentialsException e) {
-			log.error("密码错误：{}", e);
-			return error("密码错误");
-		} catch (RuntimeException e) {
-			log.error("未知错误,请联系管理员：{}", e);
-			return error("未知错误,请联系管理员");
-		}
-		doLog(ShiroKit.getSession(), "登录");
-		return success("登录成功");
+		log.error("账号不存在：{}", e);
+		return error("账号不存在");
+	} catch (DisabledAccountException e) {
+		log.error("账号未启用：{}", e);
+		return error("账号未启用");
+	} catch (IncorrectCredentialsException e) {
+		log.error("密码错误：{}", e);
+		return error("密码错误");
+	} catch (RuntimeException e) {
+		log.error("未知错误,请联系管理员：{}", e);
+		return error("未知错误,请联系管理员");
+	}
+	doLog(ShiroKit.getSession(), "登录");
+	return success("登录成功");
 	}
 
 	@RequestMapping("/logout")
